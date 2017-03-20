@@ -64,6 +64,17 @@ public class UserDaoImplTest {
         assertThat(userService.login("Abc", "1234"), is(nullValue()));
     }
 
+    @Test
+    public void testAbleToGoToPub() {
+        UserServiceImpl userService = new UserServiceImpl();
+        UserDaoImpl userDao = new UserDaoImpl();
+        userService.setUserDao(userDao);
+
+        assertThat(userService.isAbleToGoToPub(new User("None","none","NoName",
+                LocalDate.of(2112,1,1),"9999999999"), LocalDate.of(2112,1,1)), is(false));
+
+    }
+
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
