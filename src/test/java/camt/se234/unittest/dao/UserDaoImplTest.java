@@ -34,6 +34,9 @@ public class UserDaoImplTest {
 
     }
 
+    /**
+     * asdfjasldfas
+     */
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
