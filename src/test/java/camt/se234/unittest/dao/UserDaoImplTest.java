@@ -36,6 +36,7 @@ public class UserDaoImplTest {
 
     /**
      * asdfjasldfas
+     * fdsafsd
      */
 
     @Rule
