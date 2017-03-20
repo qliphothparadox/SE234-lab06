@@ -17,6 +17,9 @@ public class UserServiceImpl {
     }
 
     public User login(String username, String password){
+        if (username.length() == 0 || password.length() == 0) {
+            throw new NullPointerException();
+        }
         List<User> users = userDao.getUsers();
         return users.stream().filter(u -> (u.getUsername().equals(username) && u.getPassword().equals(password)))
                 .findFirst().orElse(null);

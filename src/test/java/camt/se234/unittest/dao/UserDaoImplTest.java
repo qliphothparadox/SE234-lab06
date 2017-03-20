@@ -72,6 +72,7 @@ public class UserDaoImplTest {
         UserServiceImpl userService = new UserServiceImpl();
         UserDaoImpl userDao = new UserDaoImpl();
         userService.setUserDao(userDao);
+
         // check for the exception we expect
         thrown.expect(NullPointerException.class);
         userService.login("","");
