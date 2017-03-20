@@ -7,6 +7,9 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.core.IsCollectionContaining.hasItems;
@@ -51,6 +54,19 @@ public class UserDaoImplTest {
 
                 ));
 
+    }
+
+    @Test
+    public void testPubAllow() {
+        List<User> list = new ArrayList<>();
+        list.add(new User("Prayuth","1234","Tu",
+                LocalDate.of(1979,2,14),"08612345678"));
+
+        UserServiceImpl userService = new UserServiceImpl();
+        UserDaoImpl userDao = new UserDaoImpl();
+        userService.setUserDao(userDao);
+
+        assertThat(userService.getPubAllowanceUser(LocalDate.of(2017,3,20)), is(list));
     }
 
     @Test

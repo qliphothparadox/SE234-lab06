@@ -16,7 +16,7 @@ public class UserDaoImpl {
         users.add(new User("Tucky","5675","Tuckung",
                 LocalDate.of(1999,8,30),"08687654321"));
         users.add(new User("Honey", "aabbcc", "Honey",
-                        LocalDate.of(2012,11,13), "0000000000"));
+                LocalDate.of(2012,11,13), "0000000000"));
         users.add(new User("None", "none", "NoName",
                 LocalDate.of(2112,1,1), "9999999999"));
     }
