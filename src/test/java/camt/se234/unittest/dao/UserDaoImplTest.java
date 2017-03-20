@@ -8,8 +8,7 @@ import org.junit.rules.ExpectedException;
 
 import java.time.LocalDate;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.Matchers.*;
 import static org.hamcrest.core.IsCollectionContaining.hasItems;
 
 
@@ -52,6 +51,17 @@ public class UserDaoImplTest {
 
                 ));
 
+    }
+
+    @Test
+    public void testLogin() {
+        UserServiceImpl userService = new UserServiceImpl();
+        UserDaoImpl userDao = new UserDaoImpl();
+        userService.setUserDao(userDao);
+
+        assertThat(userService.login("Prayuth", "1234"), is(new User("Prayuth","1234","Tu",
+                LocalDate.of(1979,2,14),"08612345678")));
+        assertThat(userService.login("Abc", "1234"), is(nullValue()));
     }
 
     @Rule

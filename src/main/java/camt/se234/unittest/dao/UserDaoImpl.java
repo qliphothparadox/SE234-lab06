@@ -22,7 +22,6 @@ public class UserDaoImpl {
     }
 
     public List<User> getUsers(){
-
         return users;
     }
 }
