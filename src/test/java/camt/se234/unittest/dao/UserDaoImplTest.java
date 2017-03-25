@@ -102,6 +102,12 @@ public class UserDaoImplTest {
         // check for the exception we expect
         thrown.expect(NullPointerException.class);
         userService.login("","");
+
+        thrown.expect(RuntimeException.class);
+        thrown.expectMessage("User name must not contain special characters");
+        userService.login("abcd*","1234");
+
+
     }
 
 
