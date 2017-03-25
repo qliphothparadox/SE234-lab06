@@ -1,6 +1,7 @@
 package camt.se234.unittest.dao;
 import camt.se234.unittest.entity.User;
 import camt.se234.unittest.exception.OldDateException;
+import camt.se234.unittest.exception.OldManException;
 import camt.se234.unittest.service.UserServiceImpl;
 
 import org.junit.Rule;
@@ -67,6 +68,7 @@ public class UserDaoImplTest {
         UserDaoImpl userDao = new UserDaoImpl();
         userService.setUserDao(userDao);
 
+        thrown.expect(OldManException.class);
         assertThat(userService.getPubAllowanceUser(LocalDate.of(2017,3,20)), is(list));
     }
 

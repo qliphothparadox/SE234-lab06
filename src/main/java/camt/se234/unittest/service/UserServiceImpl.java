@@ -50,7 +50,7 @@ public class UserServiceImpl {
 
     private boolean isAbleToGoToPubIgnoreException(User user, LocalDate date){
         if(ChronoUnit.YEARS.between(user.getDateOfBirth(),date)> 45){
-            throw new OldManException();
+            throw new OldManException("You are too old");
         }
         if (user.getName().length() > 8){
             return false;
