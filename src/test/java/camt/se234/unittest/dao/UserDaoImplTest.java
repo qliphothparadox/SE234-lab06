@@ -1,5 +1,6 @@
 package camt.se234.unittest.dao;
 import camt.se234.unittest.entity.User;
+import camt.se234.unittest.exception.OldDateException;
 import camt.se234.unittest.service.UserServiceImpl;
 
 import org.junit.Rule;
@@ -83,11 +84,15 @@ public class UserDaoImplTest {
     @Test
     public void testAbleToGoToPub() {
         UserServiceImpl userService = new UserServiceImpl();
+        thrown.expect(OldDateException.class);
         UserDaoImpl userDao = new UserDaoImpl();
         userService.setUserDao(userDao);
 
-        assertThat(userService.isAbleToGoToPub(new User("None","none","NoName",
-                LocalDate.of(2112,1,1),"9999999999"), LocalDate.of(2112,1,1)), is(false));
+        assertThat(userService.isAbleToGoToPub(new User("Gaanploo","1111","Myla",
+                LocalDate.of(1995,10,30),"0234567890"), LocalDate.now()), is(true));
+
+        assertThat(userService.isAbleToGoToPub(new User("Bob", "qwerty", "Bob",
+                LocalDate.of(2055,1,16), "0004400000"), LocalDate.now()), is(false));
     }
 
     @Rule
