@@ -86,15 +86,16 @@ public class UserDaoImplTest {
     @Test
     public void testAbleToGoToPub() {
         UserServiceImpl userService = new UserServiceImpl();
-        thrown.expect(OldDateException.class);
         UserDaoImpl userDao = new UserDaoImpl();
         userService.setUserDao(userDao);
-
+        
         assertThat(userService.isAbleToGoToPub(new User("Gaanploo","1111","Myla",
                 LocalDate.of(1995,10,30),"0234567890"), LocalDate.now()), is(true));
 
+        thrown.expect(OldDateException.class);
         assertThat(userService.isAbleToGoToPub(new User("Bob", "qwerty", "Bob",
                 LocalDate.of(2055,1,16), "0004400000"), LocalDate.now()), is(false));
+
     }
 
     @Rule
