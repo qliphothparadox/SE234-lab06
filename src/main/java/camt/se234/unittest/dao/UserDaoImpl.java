@@ -28,6 +28,15 @@ public class UserDaoImpl {
                 LocalDate.of(2055,1,16), "0004400000"));
         users.add(new User("Hello", "none", "Oldman",
                 LocalDate.of(1915,1,10), "9992354999"));
+
+        users.add(new User("Nora", "nilnil", "Vicheka",
+                LocalDate.of(1995, 11,01), "09367862666"));
+        users.add(new User("Jack", "jackpot001", "Jack The Giant Slayer",
+                LocalDate.of(1989, 03, 27), "00145739859"));
+        users.add(new User("Belle", "belly991", "Princess Belle",
+                LocalDate.of(1990, 01, 01), "00912323423"));
+        users.add(new User("Vathanaka", "3434V", "Chan",
+                LocalDate.of(1995, 04,30), "01234348569"));
     }
 
     public List<User> getUsers(){
