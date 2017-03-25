@@ -19,12 +19,12 @@ public class UserDaoImpl {
                 LocalDate.of(2012,11,13), "0000000000"));
         users.add(new User("None", "none", "NoName",
                 LocalDate.of(2112,1,1), "9999999999"));
-        //Phornthep
+        //Phornthep//
         users.add(new User("Baibai", "5678", "Thanya", LocalDate.of(1997,5,12), "0899994567"));
         users.add(new User("Fernfern", "rrtg", "Tommy", LocalDate.of(1990,3,8), "0892374567"));
         users.add(new User("Neena", "love55", "Collept", LocalDate.of(1999,1,30), "0899994567"));
         users.add(new User("Sora", "horizon", "Aryami", LocalDate.of(2001,6,4), "0899994567"));
-        //Phornthep
+        //Phornthep//
 
         users.add(new User("Gaanploo","1111","Myla",
                 LocalDate.of(1995,10,30),"0234567890"));
