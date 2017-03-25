@@ -88,7 +88,6 @@ public class UserDaoImplTest {
 
         assertThat(userService.isAbleToGoToPub(new User("None","none","NoName",
                 LocalDate.of(2112,1,1),"9999999999"), LocalDate.of(2112,1,1)), is(false));
-
     }
 
     @Rule
